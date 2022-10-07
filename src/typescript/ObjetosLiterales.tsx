@@ -12,16 +12,28 @@ export const ObjetosLiterales = () => {
             numero: 533
         }
     }
+
+    //Para indicar como lucirán mis objetos
+    //Las interfaces no son ni sirven para crear instancias de objetos.
+    //Se utilizan para validar.
     interface Persona {
         nombreCompleto: string,
         edad: number,
-        direccion: {
+        direccion : Direccion
+        /*direccion: {
             pais: string,
             estado: string,
             ciudad: string,
             calle: string,
             numero: number
-        }
+        }*/
+    }
+    interface Direccion {
+        pais: string,
+        estado: string,
+        ciudad: string,
+        calle: string,
+        numero: number
     }
     return (
         <div>
