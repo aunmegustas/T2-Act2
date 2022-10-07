@@ -7,8 +7,8 @@ export const useForm = <T extends object>(formulario: T) => {
     }*/
         formulario
     )
-
-    const onChange = (value: string, campo: string) => {
+    const onChange = (value: string, campo: keyof T) => {
+    //const onChange = (value: string, campo: string) => {
         //llamado a la función que cambia el useState
         setstate({
             //desestructuramos los valores del useState
