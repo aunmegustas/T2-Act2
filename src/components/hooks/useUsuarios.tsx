@@ -24,9 +24,8 @@ export const useUsuarios = () => {
             //console.log(resp.data.data);
             //console.log(resp.data.data[0].first_name);
             //console.log(resp.data.data);
-            if( resp.data.data.length > 0 ){
+            if( resp.data.data.length > 0){
                 setUsuarios(resp.data.data);
-                ficRefPage.current++;
             }else{
                 alert('No hay más registros.');
             }
@@ -41,6 +40,9 @@ export const useUsuarios = () => {
         if(ficRefPage.current > 1){
             ficRefPage.current--;
             ficFnCargaUsuarios();
+        }
+        else{
+            alert('No hay más registros.');
         }
     }
 
