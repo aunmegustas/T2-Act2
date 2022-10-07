@@ -1,14 +1,26 @@
 import React from 'react'
 
 export const ObjetosLiterales = () => {
-    const persona = {
-        nombre: 'Martha',
+    const persona : Persona = {
+        nombreCompleto: 'Martha',
         edad: 30,
         direccion: {
             pais: 'Mexico',
             estado: 'Nayarit',
             ciudad: 'Tepic',
-            direccion: 'Conocido No. 533'
+            calle: 'Conocido',
+            numero: 533
+        }
+    }
+    interface Persona {
+        nombreCompleto: string,
+        edad: number,
+        direccion: {
+            pais: string,
+            estado: string,
+            ciudad: string,
+            calle: string,
+            numero: number
         }
     }
     return (
