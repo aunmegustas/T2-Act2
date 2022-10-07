@@ -1,7 +1,7 @@
 import { useCounter } from "./hooks/useCounter"
 
 export const ContadorHook = () => {
-    const {valor, acumular} = useCounter();
+    const {valor, acumular} = useCounter(100);
     return (
         <div>
             <h3>Contador Hook: <small>{valor}</small></h3>
