@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-export const useForm = () => {
-    const [formulario, setformulario] = useState({
+export const useForm = <T extends object>(formulario: T) => {
+    const [state, setstate] = useState(/*{
         email: 'test@test.com',
         password: '123456'
-    })
+    }*/
+        formulario
+    )
 
     const onChange = (value: string, campo: string) => {
         //llamado a la función que cambia el useState
-        setformulario({
+        setstate({
             //desestructuramos los valores del useState
-            ...formulario,
+            ...state,
             //aqui es como si estuvieramos mandando
             //el atributo email o password. Dicho de otro modo
             //los [] computan es decir compara el valor que trae
@@ -22,8 +24,8 @@ export const useForm = () => {
         });
     }
     return {
-        ...formulario,
-        formulario,
+        ...state,
+        formulario: state,
         onChange
     }
 }
